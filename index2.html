@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Navbar.css">
+    <link rel="stylesheet" href="./css/Hero.css">
+    <link rel="stylesheet" href="./css/SearchBar.css">
+    <link rel="stylesheet" href="./css/Popular.css">
+    <link rel="stylesheet" href="./css/Item.css">
+    <link rel="stylesheet" href="./css/NewCollections.css">
+    <link rel="stylesheet" href="./css/NewLetter.css">
+    <link rel="stylesheet" href="./css/Footer.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./adding/bootstrap/boostrap.min.css">
+    <!-- <script src="./adding/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./adding/poper/poper.min.js"></script>
+    <script src="./adding/bootstrap/boostrap.min.js"></script>  -->
+
+    <script src="./adding/bootstrap/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="hero" style="display: flex;">
+        <div class="nav-header">
+            <a href="/" style="text-decoration: none; color: inherit; z-index: 3; margin-top: 3.5rem; position: fixed;  z-index: 9999;">
+                <p style="color: white;">XUN_DON</p>
+            </a>
+        </div>
+        <div class="shop-navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/product/gender/nam" style="text-decoration: none; color: inherit;">NAM</a>
+                    <hr />
+
+                    <div class="subcategories" style="margin: 0; width: 30rem;">
+                        <!-- SUBCATEGORY 1 -->
+                        <a href="javascript:void(0)" onclick="toggleSubcategory(1)" style="text-decoration: none;">
+                            <p style="display: inline;"> SUBCATEGORY 1 +</p>
+                        </a>
+                        <!-- Container cho các mục con của subcategory 1 -->
+                        <div id="subcategory1-extra" class="subcategory-extra" style="display: none; margin-left: 8%;">
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 1.1</p>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 1.2</p>
+                            </a>
+                        </div>
+
+                        <!-- SUBCATEGORY 2 -->
+                        <a href="javascript:void(0)" onclick="toggleSubcategory(2)" style="text-decoration: none;">
+                            <p>SUBCATEGORY 2 +</p>
+                        </a>
+                        <!-- Container cho các mục con của subcategory 2 -->
+                        <div id="subcategory2-extra" class="subcategory-extra" style="display: none;margin-left: 8%;">
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 2.1</p>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 2.2</p>
+                            </a>
+                        </div>
+
+                        <!-- SUBCATEGORY 3 -->
+                        <a href="javascript:void(0)" onclick="toggleSubcategory(3)" style="text-decoration: none;">
+                            <p>SUBCATEGORY 3 +</p>
+                        </a>
+                        <!-- Container cho các mục con của subcategory 3 -->
+                        <div id="subcategory3-extra" class="subcategory-extra" style="display: none;margin-left: 8%;">
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 3.1</p>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 3.2</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </li>
+                <span style="font-size: 2rem; margin-bottom:2%;">|</span>
+                <li class="nav-item">
+                    <a href="/product/gender/nữ" style="text-decoration: none; color: inherit;">NỮ</a>
+                    <hr />
+                    <div class="subcategories" style="margin: 0; width: 30rem;">
+                        <!-- SUBCATEGORY 4 -->
+                        <a href="javascript:void(0)" onclick="toggleSubcategory(4)" style="text-decoration: none;">
+                            <p style="display: inline;"> SUBCATEGORY 4 +</p>
+                        </a>
+                        <!-- Container cho các mục con của subcategory 4 -->
+                        <div id="subcategory4-extra" class="subcategory-extra" style="display: none;margin-left: 8%;">
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 4.1</p>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 4.2</p>
+                            </a>
+                        </div>
+
+                        <!-- SUBCATEGORY 5 -->
+                        <a href="javascript:void(0)" onclick="toggleSubcategory(5)" style="text-decoration: none;">
+                            <p>SUBCATEGORY 5 +</p>
+                        </a>
+                        <!-- Container cho các mục con của subcategory 5 -->
+                        <div id="subcategory5-extra" class="subcategory-extra" style="display: none;margin-left: 8%;">
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 5.1</p>
+                            </a>
+                            <a href="#" style="text-decoration: none;">
+                                <p>Extra Subcategory 5.2</p>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-login-cart">
+                <!-- Search bar -->
+                <div class="search-bar"
+                    style="margin: 0.5px; border: none; border-bottom: 2px solid white; outline: none; background-color: transparent; display: flex; align-items: center;">
+                    <span style="font-size: 1rem; color: white;"><img src="./img/search.png" alt=""
+                            style="height: 20px;"></span> <!-- Search icon placeholder -->
+                    <input type="text" placeholder="Tìm kiếm"
+                        style="background: transparent; outline: none; border: none; color: white;">
+                </div>
+
+                <!-- User icon and hidden login/register options -->
+                <div class="user-menu">
+                    <span class="user-icon" style="color: white; font-size: 2rem; cursor: pointer;">
+                        <img src="./img/avatar.png" alt="" style="height: 30px; margin-top: 5%;">
+                    </span>
+                    <div class="user-options" style="display: none;">
+                        <button
+                            style="color: white; width: 100%; height: 40px; margin-bottom: 0.5rem; font-size: 15px; background-color: black;">
+                            Đăng nhập
+                        </button>
+                        <button
+                            style="color: black; width: 100%; height: 40px; font-size: 15px; background-color: white; border: 1px solid black">
+                            Đăng ký
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Heart icon -->
+                <div class="heart">
+                    <span style="color: white; font-size: 2rem; cursor: pointer;"><img src="./img/heart.png" alt=""
+                            style="height: 25px; opacity: 1;"></span>
+                </div>
+
+                <!-- Cart icon -->
+                <div class="cart">
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                        <span style="color: white; font-size: 2rem; cursor: pointer;">
+                            <img src="./img/shopping-cart.png" alt="" style="height: 30px; padding-left: 15px;">
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Offcanvas (cart frame) nằm bên phải -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas"
+                    aria-labelledby="cartOffcanvasLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="cartOffcanvasLabel">Giỏ hàng của tôi</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!-- Cart Item -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://via.placeholder.com/100x100" alt="Product Image" />
+                            </div>
+                            <div class="cart-item-details">
+                                <p class="cart-item-name">Áo Polo nam phối màu. Fitted</p>
+                                <p class="cart-item-description">BRIGHT WHITE, L</p>
+                                <div class="cart-item-actions">
+                                    <span class="cart-item-quantity">SL: 1</span>
+                                    <button class="remove-item-btn">
+                                        <img src="https://via.placeholder.com/20x20" alt="Remove Icon">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">569.000đ</div>
+                        </div>
+                    </div>
+                    <div class="offcanvas-footer">
+                        <button class="view-cart-btn">Xem giỏ hàng (1 sản phẩm)</button>
+                    </div>
+                </div>
+
+
+
+                <!-- Cart count -->
+                <div class="nav-cart-count">0</div>
+
+
+            </div>
+        </div>
+        <!-- Navbar placeholder -->
+    </div>
+    <script>
+        // Hàm để toggle (hiện/ẩn) mục con của subcategory 1
+        function toggleSubcategory(subcategoryId) {
+            const subcategory = document.getElementById(`subcategory${subcategoryId}-extra`);
+            if (subcategory.style.display === "none") {
+                subcategory.style.display = "block"; // Hiển thị mục con
+            } else {
+                subcategory.style.display = "none"; // Ẩn mục con
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userIcon = document.querySelector('.user-icon');
+            const userOptions = document.querySelector('.user-options');
+
+            userIcon.addEventListener('click', function () {
+                // Toggle hiển thị menu
+                if (userOptions.style.display === 'flex') {
+                    userOptions.style.display = 'none';
+                    userOptions.style.opacity = '0';
+                } else {
+                    userOptions.style.display = 'flex';
+                    userOptions.style.opacity = '1';
+                }
+            });
+
+            // Đóng menu nếu click ra bên ngoài
+            document.addEventListener('click', function (event) {
+                if (!userMenu.contains(event.target)) {
+                    userOptions.style.display = 'none';
+                    userOptions.style.opacity = '0';
+                }
+            });
+        });
+    </script>
+
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.shop-navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+    </script>
+
+    <!-- Popular -->
+    <div class="container-fluid popular mt-5" style="margin-top: 8%;">
+        <h1>POPULAR IN WOMEN</h1>
+        <hr />
+        <div class="popular-item">
+            <!-- Các item sản phẩm sẽ được lặp ở đây -->
+            <div class="shop-item">
+                <a href="/product/1">
+                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
+                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
+                        onclick="window.scrollTo(0, 0)" />
+                </a>
+                <p>Product Name</p>
+                <div class="item-prices">
+                    <div class="item-price-new">
+                        <!-- Giá sản phẩm mới -->
+                        $100
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-item">
+                <a href="/product/1">
+                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
+                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
+                        onclick="window.scrollTo(0, 0)" />
+                </a>
+                <p>Product Name</p>
+                <div class="item-prices">
+                    <div class="item-price-new">
+                        <!-- Giá sản phẩm mới -->
+                        $100
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-item">
+                <a href="/product/1">
+                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
+                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
+                        onclick="window.scrollTo(0, 0)" />
+                </a>
+                <p>Product Name</p>
+                <div class="item-prices">
+                    <div class="item-price-new">
+                        <!-- Giá sản phẩm mới -->
+                        $100
+                    </div>
+                </div>
+            </div>
+            <!-- Thêm sản phẩm khác nếu có -->
+        </div>
+    </div>
+
+
+    <!-- Collections -->
+    <div class="container new-collections mt-5">
+        <h1>NEW COLLECTIONS</h1>
+
+        <hr />
+
+        <div class="collections">
+            <!-- Sản phẩm 1 -->
+            <div class="collection-item">
+                <a href="/product/1">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                    <div class="size-container">
+                        <div class="size-options">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                        </div>
+                    </div>
+                </a>
+                <div class="image-cate">
+                    <img src="./img/product_25.png" alt="" onclick="selectImage(this)">
+                    <img src="./img/product_26.png" alt="" onclick="selectImage(this)">
+                    <img src="./img/product_27.png" alt="" onclick="selectImage(this)">
+                </div>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="collection-item">
+                <a href="/product/2">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+
+            <!-- Sản phẩm 3 -->
+            <div class="collection-item">
+                <a href="/product/3">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="collection-item">
+                <a href="/product/4">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="collection-item">
+                <a href="/product/5">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="collection-item">
+                <a href="/product/6">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 7 -->
+            <div class="collection-item">
+                <a href="/product/7">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+
+            <!-- Sản phẩm 8 -->
+            <div class="collection-item">
+                <a href="/product/8">
+                    <div class="image-container">
+                        <img class="image-main" src="./img/product_1.png" alt="Product 1 Image" />
+                        <img class="image-hover" src="./img/product_1_hover.png" alt="Product 1 Hover Image" />
+                        <img src="./img/add.png" alt="" class="plus">
+                    </div>
+                </a>
+                <p>Product 1 Name</p>
+                <div class="item-price-new">$100</div>
+            </div>
+            <!-- Sản phẩm thêm -->
+            <!-- Thêm các sản phẩm tương tự -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chọn tất cả các biểu tượng plus
+            const plusIcons = document.querySelectorAll('.collection-item .plus');
+
+            plusIcons.forEach(function (plus) {
+                plus.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn hành động mặc định nếu có
+
+                    // Tìm phần tử cha .collection-item
+                    const collectionItem = plus.closest('.collection-item');
+
+                    // Tìm .size-container trong .collection-item này
+                    const sizeContainer = collectionItem.querySelector('.size-container');
+
+                    // Đóng tất cả các size-container khác
+                    document.querySelectorAll('.size-container.active').forEach(function (container) {
+                        if (container !== sizeContainer) {
+                            container.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle lớp 'active' để hiển thị/ẩn
+                    sizeContainer.classList.toggle('active');
+                });
+            });
+
+            // Đóng size-container khi nhấp ra ngoài
+            document.addEventListener('click', function (event) {
+                plusIcons.forEach(function (plus) {
+                    const collectionItem = plus.closest('.collection-item');
+                    const sizeContainer = collectionItem.querySelector('.size-container');
+
+                    // Nếu click không phải là trong .collection-item, đóng size-container
+                    if (!collectionItem.contains(event.target)) {
+                        sizeContainer.classList.remove('active');
+                    }
+                });
+            });
+
+            // Thêm sự kiện cho nút đóng
+            const closeButtons = document.querySelectorAll('.size-container .close-btn');
+
+            closeButtons.forEach(function (btn) {
+                btn.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Ngăn sự kiện lan truyền
+                    btn.closest('.size-container').classList.remove('active');
+                });
+            });
+
+            // Xử lý chọn size
+            const sizeButtons = document.querySelectorAll('.size-btn');
+
+            sizeButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    // Xóa lớp 'selected' khỏi tất cả các nút trong cùng size-container
+                    const sizeContainer = btn.closest('.size-container');
+                    const buttons = sizeContainer.querySelectorAll('.size-btn');
+                    buttons.forEach(function (button) {
+                        button.classList.remove('selected');
+                    });
+
+                    // Thêm lớp 'selected' vào nút được nhấp
+                    btn.classList.add('selected');
+                });
+            });
+        });
+    </script>
+    <script>
+        function selectImage(img) {
+            // Xóa class 'selected' khỏi tất cả các hình ảnh
+            const images = document.querySelectorAll('.image-cate img');
+            images.forEach(image => {
+                image.classList.remove('selected');
+            });
+    
+            // Thêm class 'selected' cho hình ảnh đã được chọn
+            img.classList.add('selected');
+        }
+    </script>
+    <style>
+        /* Page */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            /* Căn giữa thanh phân trang */
+            margin-top: 20px;
+            /* Khoảng cách phía trên */
+        }
+
+        .pagination a {
+            color: black;
+            /* Màu cho các nút */
+            padding: 8px 16px;
+            /* Khoảng cách trong các nút */
+            text-decoration: none;
+            /* Bỏ gạch chân */
+            margin: 0 5px;
+            /* Khoảng cách giữa các nút */
+            border: 1px solid black;
+            /* Đường viền */
+            border-radius: 5px;
+            /* Bo tròn các góc */
+            transition: background-color 0.3s;
+            /* Hiệu ứng chuyển màu */
+        }
+
+        .pagination a:hover {
+            background-color: #999999;
+            /* Màu nền khi hover */
+            color: white;
+            /* Màu chữ khi hover */
+        }
+
+        .pagination a.active {
+            background-color: #999999;
+            /* Màu nền cho trang hiện tại */
+            color: white;
+            /* Màu chữ cho trang hiện tại */
+        }
+    </style>
+
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <a href="#">&laquo;</a> <!-- Nút trước -->
+        <a href="#" class="active">1</a> <!-- Trang hiện tại -->
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&raquo;</a> <!-- Nút tiếp theo -->
+    </div>
+
+    <!-- New Letter -->
+
+    <div class="container newsletter mt-5">
+        <h1>Get Exclusive Ofers On You Email</h1>
+        <p>Subscribe to our newletter and say updated</p>
+        <div>
+            <input type="email" placeholder='Your Email' />
+            <button>Subscibe</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-logo">
+            <img src="footer_logo.png" alt="" />
+            <p>SHOPPEE</p>
+        </div>
+        <ul class="footer-links">
+            <li>Company</li>
+            <li>Products</li>
+            <li>Offices</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <div class="footer-social-icon">
+            <div class="footer-icons-container">
+                <img src="instagram.png" alt="" />
+            </div>
+            <div class="footer-icons-container">
+                <img src="pinterest.png" alt="" />
+            </div>
+            <div class="footer-icons-container">
+                <img src="whatsapp.png" alt="" />
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <hr />
+            <p>© 2023 by Shoppee. Proudly created with Wix.com</p>
+        </div>
+    </div>
+
+</body>
+<!-- Thêm jQuery từ CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Thêm Bootstrap JS từ CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</html>
