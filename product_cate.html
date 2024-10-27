@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/Navbar.css">
-    <link rel="stylesheet" href="./css/Hero.css">
-    <link rel="stylesheet" href="./css/SearchBar.css">
-    <link rel="stylesheet" href="./css/Popular.css">
-    <link rel="stylesheet" href="./css/Item.css">
+    <link rel="stylesheet" href="./css/Navbar_procate.css">
+    <link rel="stylesheet" href="./css/Hero_procate.css">
+    <!-- <link rel="stylesheet" href="./css/SearchBar.css"> -->
+    <!-- <link rel="stylesheet" href="./css/Popular.css"> -->
+    <!-- <link rel="stylesheet" href="./css/Item.css"> -->
     <link rel="stylesheet" href="./css/NewCollections.css">
-    <link rel="stylesheet" href="./css/NewLetter.css">
+    <!-- <link rel="stylesheet" href="./css/NewLetter.css"> -->
     <link rel="stylesheet" href="./css/Footer.css">
+    <link rel="stylesheet" href="./css/Cate.css">
 
 
     <!-- Bootstrap CSS -->
@@ -23,9 +24,9 @@
 
     <script src="./adding/bootstrap/bootstrap.bundle.min.js"></script>
 
-    <script src="./js/navbar.js"></script>
+    <script src="./js/cate_filter.js"></script>
     <script src = "./js/product_collection.js"></script>
-
+    <script src="./js/navbar.js"></script>
 </head>
 
 <body>
@@ -246,63 +247,79 @@
         <!-- Navbar placeholder -->
     </div>
 
-    <!-- Popular -->
-    <div class="container-fluid popular mt-5" style="margin-top: 8%;">
-        <h1>POPULAR IN WOMEN</h1>
-        <hr />
-        <div class="popular-item">
-            <!-- Các item sản phẩm sẽ được lặp ở đây -->
-            <div class="shop-item">
-                <a href="/product/1">
-                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
-                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
-                        onclick="window.scrollTo(0, 0)" />
+    <div class="cate-container container">
+        <div class="cate-left">
+            <strong>29 Sản phẩm</strong>
+            <div class="cate-left-breadcrumb" style="margin-left: 20px; margin-top: 16px; ">
+                <a href="#">
+                    <span class="breadcrumb" style="text-decoration: none; color: inherit;">
+                        Trang chủ > <span class="current-category">Coffee Lovers</span>
+                    </span>
                 </a>
-                <p>Product Name</p>
-                <div class="item-prices">
-                    <div class="item-price-new">
-                        <!-- Giá sản phẩm mới -->
-                        $100
-                    </div>
-                </div>
             </div>
-
-            <div class="shop-item">
-                <a href="/product/1">
-                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
-                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
-                        onclick="window.scrollTo(0, 0)" />
-                </a>
-                <p>Product Name</p>
-                <div class="item-prices">
-                    <div class="item-price-new">
-                        <!-- Giá sản phẩm mới -->
-                        $100
-                    </div>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <a href="/product/1">
-                    <!-- Thay đổi `1` thành ID sản phẩm thực tế -->
-                    <img src="./img/p1_product_i1.png" alt="Product Image" style="width: 100%;"
-                        onclick="window.scrollTo(0, 0)" />
-                </a>
-                <p>Product Name</p>
-                <div class="item-prices">
-                    <div class="item-price-new">
-                        <!-- Giá sản phẩm mới -->
-                        $100
-                    </div>
-                </div>
-            </div>
-            <!-- Thêm sản phẩm khác nếu có -->
+        </div>
+        <div class="cate-right">
+            <i class="filter-icon" onclick="toggleFilter()"><img src="./img/filter.png" alt="" style="height: 20px; width: 20px;"></i>
+            <i class="sort-icon">⇅</i>
+            <i class="view-icon">◻</i>
+            <i class="grid-icon">☷</i>
         </div>
     </div>
 
+    <!-- Filter Panel -->
+    <div class="filter-panel" id="filterPanel">
+        <h4>Bộ lọc</h4>
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="showTab('colorTab')">Màu</button>
+            <button class="tab-btn" onclick="showTab('sizeTab')">Kích Cỡ</button>
+            <button class="tab-btn" onclick="showTab('priceTab')">Giá</button>
+        </div>
 
-    <!-- Collections -->
-    <div class="container new-collections mt-5">
+        <!-- Tab Content: Color -->
+        <div class="tab-content" id="colorTab">
+            <div class="color-options" >
+                <div class="color-box red">RED</div>
+                <div class="color-box brown">BROWN</div>
+                <div class="color-box white">WHITE</div>
+                <div class="color-box yellow">YELLOW</div>
+                <div class="color-box orange">ORANGE</div>
+                <div class="color-box green">GREEN</div>
+                <div class="color-box blue">BLUE</div>
+                <div class="color-box pink">PINK</div>
+                <div class="color-box purple">PURPLE</div>
+                <div class="color-box beige">BEIGE</div>
+                <div class="color-box grey">GREY</div>
+                <div class="color-box olive">OLIVE</div>
+            </div>
+        </div>
+
+        <!-- Tab Content: Size -->
+        <div class="tab-content" id="sizeTab" style="display:none;">
+            <div class="size-options">
+                <label><input type="checkbox"> S</label>
+                <label><input type="checkbox"> M</label>
+                <label><input type="checkbox"> L</label>
+                <label><input type="checkbox"> XL</label>
+                <label><input type="checkbox"> XXL</label>
+            </div>
+        </div>
+
+        <!-- Tab Content: Price -->
+        <div class="tab-content" id="priceTab" style="display:none;">
+            <div class="price-range">
+                <label for="price">Giá:</label>
+                <input type="range" id="price" min="0" max="10000000">
+                <span>0đ</span> - <span>10,000,000đ</span>
+            </div>
+        </div>
+
+        <button class="reset-button">Xoá hết</button>
+        <button class="result-button">Xem kết quả (29)</button>
+    </div>
+
+
+      <!-- Collections -->
+      <div class="container new-collections mt-5">
         <h1>NEW COLLECTIONS</h1>
 
         <hr />
@@ -431,8 +448,6 @@
         </div>
     </div>
 
-
-
     <!-- Pagination -->
     <div class="pagination">
         <a href="#">&laquo;</a> <!-- Nút trước -->
@@ -443,18 +458,6 @@
         <a href="#">5</a>
         <a href="#">&raquo;</a> <!-- Nút tiếp theo -->
     </div>
-
-    <!-- New Letter -->
-
-    <div class="container newsletter mt-5">
-        <h1>Get Exclusive Ofers On You Email</h1>
-        <p>Subscribe to our newletter and say updated</p>
-        <div>
-            <input type="email" placeholder='Your Email' />
-            <button>Subscibe</button>
-        </div>
-    </div>
-
 
     <!-- Footer -->
     <div class="footer">
@@ -485,14 +488,6 @@
             <p>© 2023 by Shoppee. Proudly created with Wix.com</p>
         </div>
     </div>
-
 </body>
-<!-- Thêm jQuery từ CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Thêm Bootstrap JS từ CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 
 </html>
