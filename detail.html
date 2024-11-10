@@ -8,13 +8,9 @@
     <link rel="stylesheet" href="./css/Navbar_procate.css">
     <link rel="stylesheet" href="./css/Hero_procate.css">
     <link rel="stylesheet" href="./css/SearchBar.css">
-    <link rel="stylesheet" href="./css/Popular.css">
-    <link rel="stylesheet" href="./css/Item.css">
-    <link rel="stylesheet" href="./css/NewCollections.css">
-    <link rel="stylesheet" href="./css/NewLetter.css">
     <link rel="stylesheet" href="./css/Footer.css">
     <link rel="stylesheet" href="./css/Cate.css">
-    <!-- <link rel="stylesheet" href="./css/ProductDisplay.css"> -->
+
 
 
     <!-- Bootstrap CSS -->
@@ -228,38 +224,36 @@
             <!-- Left Section: Image Gallery -->
             <div class="col-md-4">
                 <div class="main-image mb-3">
-                    <img id="mainImage" src="./img/product_1.png" class="img-fluid" alt="Product Image" style="width: 100%;">
+                    <img id="mainImage" src="./img/product_1.png" class="img-fluid" alt="Product Image"
+                        style="width: 100%;">
                 </div>
-                <div class="thumbnail-images d-flex justify-content-start">
-                    <img src="./img/product_25.png" class="img-thumbnail me-2 thumbnail"
-                        data-large="./img/product_25.png" alt="Thumb 1">
-                    <img src="/img/product_26.png" class="img-thumbnail me-2 thumbnail"
-                        data-large="./img/product_26.png" alt="Thumb 2">
-                    <img src="./img/product_27.png" class="img-thumbnail me-2 thumbnail"
-                        data-large="./img/product_27.png" alt="Thumb 3">
-                </div>
+                <!-- <div class="thumbnail-images d-flex justify-content-start">
+                <img src="./img/product_25.png" class="img-thumbnail me-2 thumbnail" data-large="./img/product_25.png" alt="Thumb 1">
+                <img src="./img/product_26.png" class="img-thumbnail me-2 thumbnail" data-large="./img/product_26.png" alt="Thumb 2">
+                <img src="./img/product_27.png" class="img-thumbnail me-2 thumbnail" data-large="./img/product_27.png" alt="Thumb 3">
+            </div> -->
             </div>
 
             <!-- Right Section: Product Info -->
             <div class="col-md-8">
-                <h2 id="productTitle">Product Title</h2>
-                <p>SKU: <span id="productSKU">12345ABC</span></p>
-                <p>Price: <span id="productPrice">$99.99</span></p>
+                <h2 id="productTitle">Áo thun nam tay ngắn thể thao. Fitted</h2>
+                <p>SKU: <span id="productSKU">10S24TSSA003_001</span></p>
+                <p><span id="productPrice">324,000 đ</span></p>
+                <p><span class="text-muted">★ 99 sản phẩm đã bán</span></p>
 
                 <!-- Color Options -->
-                <div class="color-options mb-3">
-                    <button class="btn btn-outline-primary color-btn" data-image="./img/product_25.png">Red</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image2.jpg">Blue</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image3.jpg">Green</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image3.jpg">Green</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image3.jpg">Green</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image3.jpg">Green</button>
-                    <button class="btn btn-outline-primary color-btn" data-image="large-image3.jpg">Green</button>
-
+                <h5>Dark Sapphire</h5>
+                <div class="color-options d-flex">
+                    <button class="btn btn-outline-primary color-btn" style="background-color: #d0d2d3;"
+                        data-image="./img/product_25.png"></button>
+                    <button class="btn btn-outline-primary color-btn" style="background-color: #2e3b55;"
+                        data-image="./img/product_26.png"></button>
+                    <button class="btn btn-outline-primary color-btn" style="background-color: #4b4439;"
+                        data-image="./img/product_27.png"></button>
                 </div>
 
                 <!-- Size Selector -->
-                <div class="size-options mb-3">
+                <div class="size-options mt-3 mb-3">
                     <div class="size-buttons d-flex">
                         <button class="btn btn-outline-primary size-btn" data-size="S">S</button>
                         <button class="btn btn-outline-primary size-btn" data-size="M">M</button>
@@ -268,21 +262,22 @@
                     </div>
                 </div>
 
-                <!-- Quantity and Buttons -->
+                <!-- Quantity and Add to Cart -->
                 <div class="row align-items-center mb-3">
-                    <div class="col-4">
+                    <div class="col-2">
                         <div class="input-group">
                             <button class="btn btn-outline-secondary" id="decreaseQuantity">-</button>
-                            <input type="number" id="quantity" class="form-control text-center" value="1" min="1">
+                            <input type="number" id="quantity" class="form-control text-center quantity-input" value="1"
+                                min="1">
                             <button class="btn btn-outline-secondary" id="increaseQuantity">+</button>
                         </div>
                     </div>
-                    <div class="col-8">
-                        <button class="btn btn-primary w-100">Add to Cart</button>
+                    <div class="col-10">
+                        <button class="btn btn-primary w-100 btn-cart">Thêm vào giỏ hàng</button>
                     </div>
                 </div>
 
-                <button class="btn btn-success w-100">Buy Now</button>
+                <!-- <button class="btn btn-success w-100">Đặt Hàng Ngay</button> -->
             </div>
         </div>
     </div>
@@ -298,53 +293,93 @@
             width: 80px;
             height: auto;
         }
-        .color-options button{
-            border-color: #999999;
-            color: black;
-            margin-top: 10px;
-        }
-        .color-btn {
-            margin-right: 5px;
-        }
-        .size-options button{
-            border-color: #999999;
-            color: black;
-            margin-top: 10px;
+
+        .color-options button {
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
+            border: 2px solid #999999;
         }
-        .size-btn.active {
-            background-color: #007bff;
-            /* Bootstrap primary color */
-            color: white;
+        .color-options button:hover{
+            border-color: black;
         }
 
+        .color-options button:active{
+            border-color: black;
+        }
+        .size-btn.active {
+            background-color: white;            /* color: white; */
+            color: black;
+            border-color: black;
+        }
+        .size-btn:hover{
+            border-color: black;
+            background-color: white;   
+            color: black;
+        }
+        .size-btn:active{
+            border-color: black;
+            background-color: white;   
+            color: black;
+        }
         .size-options .size-btn {
-            flex: 1;
-            /* Make buttons flexible to take equal space */
-            /* margin: 0 5px; */
-            /* Add some margin between buttons */
             width: 50px;
+            margin-right: 10px;
+        }
+
+        .size-buttons button {
+            border-color: #999999;
+            color: black;
+        }
+
+        .btn-cart {
+            color: black;
+            background-color: white;
+            border-color: #999999;
+        }
+
+        .btn-cart:hover {
+            border-color: black;
+            background-color: white;
+            color: black;
+        }
+
+        .quantity-input {
+            border: 1px solid #999999;
+            width: 2px;
+        }
+
+        /* Hide spinner arrows in Chrome, Safari, Edge, and Opera */
+        .quantity-input::-webkit-outer-spin-button,
+        .quantity-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Hide spinner arrows in Firefox */
+        .quantity-input[type=number] {
+            -moz-appearance: textfield;
         }
     </style>
 
     <script>
-        // Xử lý sự kiện cho hình thu nhỏ
+        // Handle thumbnail click to change main image
         document.querySelectorAll('.thumbnail').forEach((thumbnail) => {
             thumbnail.addEventListener('click', function () {
-                const largeImage = this.src; // Lấy src của hình thu nhỏ
-                document.getElementById('mainImage').src = largeImage; // Cập nhật hình lớn
+                const largeImage = this.src;
+                document.getElementById('mainImage').src = largeImage;
             });
         });
 
-        // Xử lý sự kiện cho nút màu
+        // Handle color button click to change main image
         document.querySelectorAll('.color-btn').forEach((colorBtn) => {
             colorBtn.addEventListener('click', function () {
-                const colorImage = this.getAttribute('data-image'); // Lấy hình ảnh cho màu sắc
-                document.getElementById('mainImage').src = colorImage; // Cập nhật hình lớn
+                const colorImage = this.getAttribute('data-image');
+                document.getElementById('mainImage').src = colorImage;
             });
         });
 
-
+        // Handle quantity increment and decrement
         document.getElementById('increaseQuantity').addEventListener('click', function () {
             const quantityInput = document.getElementById('quantity');
             quantityInput.value = parseInt(quantityInput.value) + 1;
@@ -357,19 +392,29 @@
             }
         });
 
+        // Handle size button click to highlight selected size
         document.querySelectorAll('.size-btn').forEach((sizeBtn) => {
             sizeBtn.addEventListener('click', function () {
-                // Remove 'active' class from all size buttons
                 document.querySelectorAll('.size-btn').forEach((btn) => {
                     btn.classList.remove('active');
                 });
-                // Add 'active' class to the clicked button
                 this.classList.add('active');
             });
         });
 
-    </script>
 
+// Handle size button click to highlight selected size
+document.querySelectorAll('.size-btn').forEach((sizeBtn) => {
+    sizeBtn.addEventListener('click', function () {
+        document.querySelectorAll('.size-btn').forEach((btn) => {
+            btn.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+        
+    </script>
 
 
 
